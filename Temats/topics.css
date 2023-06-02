@@ -1,0 +1,61 @@
+a.topic {
+    display: flex;
+    width: var(--widthTopic);
+    height: var(--heightTopic);
+    background-color: rgb(205, 222, 255);
+    padding: 20px;
+    text-decoration: none;
+    color: black !important;
+}
+
+div.theme {
+    display: flex;
+    width: var(--widthTopic);
+    background-color: rgb(205, 222, 255);
+    padding: 20px;
+    text-decoration: none;
+    color: black !important;
+}
+
+a.topic:hover {
+    cursor: pointer;
+    background-color: rgb(153, 187, 255);
+}
+
+h1 {
+    text-align: inherit !important;
+    color: rgb(23, 10, 105) !important;
+    padding: 0px !important;
+}
+
+img.topic {
+    width: 300px;
+    margin-right: 24px;
+}
+
+:root {
+    --widthTopic: calc(100vw - 96px * 2);
+    --heightTopic: 250px;
+}
+
+div.topicText {
+    font-size: 20px;
+    overflow: hidden;
+    height: 140px !important;
+    word-break: break-all;
+}
+
+div.themeText {
+    font-size: 20px;
+    word-break: break-all;
+}
+
+a.btnTest {
+    user-select: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 16px 96px;
+    background-color: rgb(20, 83, 170);
+    color: white;
+}

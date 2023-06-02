@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    user-select: none;
+    height: 100px;
+    padding: 0px 32px;
+    width: 100%;
+    background: linear-gradient(45deg,rgb(23, 10, 105), #a60631);
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.favicon {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.favicon>img {
+    width: 40px; 
+    height: 40px; 
+    margin-right: 16px;
+}
+
+.favicon>span {
+    color: white;
+    font-size: 28px;
+}
+
+header li {
+    display: inline;
+    font-size: 24px;
+    padding: 16px;
+    margin-right: 24px;
+    list-style: none;
+    position: relative;
+    top: -4px;
+    transition: 0.4s;
+}
+
+header li:last-child {
+    margin-right: 0px;
+}
+
+i.menu {
+    color: white !important;  
+    float: right !important; 
+    font-size: 48px !important; 
+    top: -4px !important;
+}
+
+i.material-icons:hover {
+    cursor: pointer;
+}
+
+.favicon {
+    float: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 4px;
+}
+
+i.material-icons {
+    font-size: 32px;
+    position: relative;
+    top: 8px;
+    margin-right: 8px;
+}
+
+nav.phone {
+    width: 320px !important; 
+    display: flex !important; 
+    flex-direction: column !important; 
+    position: absolute !important; 
+    right: 128px !important; 
+    top: 84px !important; 
+    background-color: darkslateblue !important;
+}
+
+li.phone {
+    padding-bottom: 18px !important; 
+    text-align: center !important; 
+    margin: 0px !important; 
+    border-radius: 0px !important;
+}
+
+a.pageLink {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+}
+
+header li:hover {
+    background-color: white;
+}
+
+header li:hover>a {
+    color: blueviolet;
+}
+
+:root {
+    --headerHeight: 100px;
+    --headerPaddingHorizontal: 32px;
+}

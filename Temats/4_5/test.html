@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../biology.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../../header.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../topics.css">
+    <title>Biology Time</title>
+</head>
+<body>
+    <header>
+        <div class="favicon">
+            <img src="../../biology.png" alt="Biology Time">
+            <span>Biology Time</span>
+        </div>
+        <!--<i class="material-icons menu" onclick="clickMenu(this)">menu</i>-->
+        <nav>
+            <li>
+                <a href="../../index.html" class="pageLink">
+                    <i class="material-icons" style="top: 6px !important;">home</i>Strona Główna
+                </a>
+            </li>
+            <li>
+                <a href="../topics.html" class="pageLink">
+                    <i class="material-icons">desktop_windows</i>Tematy
+                </a>
+            </li>
+            <li>
+                <a href="../../Pomoc/pomoc.html" class="pageLink">
+                    <i class="material-icons">help</i>Pomoc
+                </a>
+            </li>
+        </nav>
+    </header>
+    <main>
+        <div class="theme" href="4_5/topic.html">
+            <div>
+                <h1 class="theme">Test 4.5</h1>
+                <br>
+                <div class="themeText" id="themeText">
+                    <p>Кто самый умный?</p>
+                    <input type="checkbox" id="a1" name="q1">
+                    <label for="a1">Я</label><br>
+                    <input type="checkbox" id="a2" name="q1">
+                    <label for="a2">Не я</label><br>
+                    <input type="checkbox" id="a3" name="q1">
+                    <label for="a3">Никто</label><br>
+                    <input type="checkbox" id="a4" name="q1">
+                    <label for="a4">Весь мир</label><br>
+                    <input type="checkbox" id="a5" name="q1">
+                    <label for="a5">Твой дебилизм)</label><br>
+                    <br>
+                    <p>Кто ты?</p>
+                    <input type="radio" id="a1" name="q2">
+                    <label for="a1">Я БОГ</label><br>
+                    <input type="radio" id="a2" name="q2">
+                    <label for="a2">Я человек</label>
+                    <br>
+                    <br>
+                    <p>Кто был Человеком-Пауком?</p>
+                    <input type="text" style="font-size: 20px;" name="q3"><br>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <a id="btnTest" class="btnTest" onclick="clickBtn()">Finish</a>
+    </main>
+    <script>
+        function clickBtn() {
+            try {
+                var points = [0, 0, 0];
+                var k = 0;
+                var answersQ1 = document.getElementsByName('q1');
+                var answersQ2 = document.getElementsByName('q2');
+                var answersQ3 = document.getElementsByName('q3');
+
+                for (let i = 0; i < answersQ1.length; i++) {
+                    if (answersQ1[i].checked) {
+                        if (i == 1 || i == 2 || i == 4)
+                            points[k] += 2;
+                        else
+                            points[k] -= 2.5;
+                    }
+                }
+                k++;
+
+                for (let i = 0; i < answersQ2.length; i++) {
+                    if (answersQ2[i].checked) {
+                        if (i == 1)
+                            points[k] += 3;
+                        else
+                            points[k] -= 3;
+                    }
+                }
+                k++;
+
+                if (answersQ3[0].value == "Питер Паркер" || answersQ3[0].value == "Паркер")
+                    points[k] += 5;
+                else
+                    points[k] -= 5;
+
+                var result = 0;
+                for (let i = 0; i < points.length; i++)
+                    if (points[i] >= 0)
+                        result += points[i];
+
+                document.getElementById("themeText").innerHTML = "";
+                document.getElementById("btnTest").remove();
+                document.getElementById("themeText").innerHTML = "Result: " + String(result) + "/14 (" + String(Math.round(result*100/14) + "%)");
+            }
+            catch {
+                return;
+            }
+        }
+
+        function clickReset() {
+            document.getElementById("main").innerHTML = "";
+            document.getElementById("main").innerHTML += `
+                <p>Кто самый умный?</p>
+                <input type="checkbox" id="a1" name="q1">
+                <label for="a1">Я</label><br>
+                <input type="checkbox" id="a2" name="q1">
+                <label for="a2">Не я</label><br>
+                <input type="checkbox" id="a3" name="q1">
+                <label for="a3">Никто</label><br>
+                <input type="checkbox" id="a4" name="q1">
+                <label for="a4">Весь мир</label><br>
+                <input type="checkbox" id="a5" name="q1">
+                <label for="a5">Твой дебилизм)</label><br>
+
+                <p>Кто ты?</p>
+                <input type="radio" id="a1" name="q2">
+                <label for="a1">Я БОГ</label><br>
+                <input type="radio" id="a2" name="q2">
+                <label for="a2">Я человек</label>
+                <p>Кто был Человеком-Пауком?</p>
+                <input type="text" name="q3"><br>
+                <br>
+                <input type="button" onclick="clickBtn()" value="Submit">`;
+        }
+    </script>
+</body>
+</html>
