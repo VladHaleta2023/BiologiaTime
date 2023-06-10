@@ -1,7 +1,6 @@
 a.topic {
     display: flex;
     width: var(--widthTopic);
-    height: var(--heightTopic);
     background-color: rgb(205, 222, 255);
     padding: 20px;
     text-decoration: none;
@@ -36,11 +35,17 @@ h1.theme {
     text-decoration: none !important;
     text-align: start !important;
     padding: 0px !important;
+    padding-bottom: 8px !important;
+    font-size: 28px !important;
+}
+
+div.imgTopic {
+    width: 300px !important;
+    margin-right: 24px;
 }
 
 img.topic {
-    width: 300px;
-    margin-right: 24px;
+    width: 300px !important;
 }
 
 :root {
@@ -51,13 +56,23 @@ img.topic {
 div.topicText {
     font-size: 20px;
     overflow: hidden;
-    height: 140px !important;
     word-break: break-all;
 }
 
 div.themeText {
     font-size: 20px;
     word-break: break-all;
+}
+
+input.btnTest {
+    user-select: none;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 24px;
+    padding: 16px 96px;
+    background-color: rgb(20, 83, 170);
+    border: 0px;
+    color: white;
 }
 
 a.btnTest {
@@ -68,4 +83,121 @@ a.btnTest {
     padding: 16px 96px;
     background-color: rgb(20, 83, 170);
     color: white;
+}
+
+div.select-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+    font-size: 18px !important;
+}
+
+i.select-option {
+    color: rgb(0, 130, 0); 
+    font-size: 20px; 
+    position: relative; 
+    top: 0px; 
+    margin-right: 4px;
+    user-select: none;
+}
+
+span.fontBold {
+    font-weight: bold;
+}
+
+span.fontBold::selection {
+    background-color: darkslateblue;
+    color: white;
+}
+
+h2 {
+    font-size: 30px !important;
+}
+
+span.text::selection {
+    background-color: darkslateblue;
+    color:white; 
+}
+
+span.bodyText {
+    padding: 10px; 
+    background-color:rgb(205, 255, 205);
+}
+
+span.afterBodyText {
+    position: relative; 
+    top: 2px;
+}
+
+i.rectangle {
+    font-size: 36px !important; 
+    top: 7px !important; 
+    margin-right: 4px !important;
+}
+
+i.play {
+    top: 2px !important;
+}
+
+h2 {
+    color: rgb(23, 10, 105)
+}
+
+.greenBox {
+    background-color: rgb(140, 255, 140); 
+    font-weight: bold; 
+    border-radius: 6px;
+    padding: 8px; 
+    border: 1.6px solid rgb(0, 180, 0);
+}
+
+td, th {
+    padding: 8px;
+    margin: 0px;
+    text-align: center;
+}
+
+th {
+    padding: 12px;
+    border: 1.6px solid rgb(0, 180, 0);
+    background-color: rgb(140, 255, 140);
+}
+
+table {
+    position: relative;
+    left: -64px;
+    width: 400px;
+    border-collapse: collapse;
+}
+
+td {
+    border: 1.6px solid rgb(182, 182, 182);
+}
+
+td:first-child {
+    width: 60%;
+    text-align: start;
+}
+
+tr {
+    background-color: rgb(220, 255, 220);
+}
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+p.question {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+p.question::selection {
+    background-color: darkslateblue;
+    color:white; 
+}
+
+label.form-check-label::selection {
+    background-color: darkslateblue;
+    color:white; 
 }
