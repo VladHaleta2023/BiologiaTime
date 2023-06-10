@@ -22,6 +22,7 @@ a.linkBody {
     color:rgb(0, 120, 46);
     font-size: 28px;
     font-style: italic;
+    cursor: pointer;
 }
 
 li>a {
