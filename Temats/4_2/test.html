@@ -9,9 +9,21 @@
     <link rel="stylesheet" href="../../header.css">
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="../topics.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>Biology Time</title>
 </head>
 <body>
+    <style>
+        td, th {
+            border: 1.6px solid rgb(182, 182, 182);
+        }
+
+        td:first-child {
+            width: 60%;
+            text-align: start;
+        }
+    </style>
     <header>
         <div class="favicon">
             <img src="../../biology.png" alt="Biology Time">
@@ -37,33 +49,1148 @@
         </nav>
     </header>
     <main>
-        
+        <br>
+        <br>
+        <br>
+        <h1><span class="fontBold">4.2 Rola witamin<br>Nieorganiczne składniki pokarmowe</span></h1>
+        <br>
+        <div id="resultAll" style="user-select: none; display: none; flex-direction: column; justify-content: center; align-items: center;">
+            <span style="font-size: 64px;" id="procentResult">0%</span>
+            <div style="width: 800px; height: 32px; background-color: rgb(203, 41, 41);">
+                <div id="progressBarResult" style="width: 0%; background-color: rgb(54, 154, 54); height: 32px;"></div>
+            </div>
+            <br>
+            <span id="punktsResult" style="font-size: 32px; font-weight: bold;"></span>
+        </div>
+        <br>
+        <div style="width: 100%;">
+            <p class="question">1. Czym są witaminy? (3 pkt)</p>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio1" name="q1" value="a1">
+                    <label class="form-check-label" for="radio1">Związki, których podstawową funkcją jest dostarczanie organizmowi energii</label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: rgb(0, 160, 0); position: relative; top: 2px;">done</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio2" name="q1" value="a2">
+                    <label class="form-check-label" for="radio2">Związki organiczne, których organizm w większości nie potrafi
+                        sam wytworzyć, a sąone wykorzystywane w różnych reakcjach biochemicznych i procesach fizjologicznych
+                    </label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio3" name="q1" value="a3">
+                    <label class="form-check-label" for="radio3">Należą do związków organicznych. 
+                        Ich cząsteczki zawierają węgiel, wodór i tlen.</label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio4" name="q1" value="a4">
+                    <label class="form-check-label" for="radio4">
+                        Podstawowa jednostka strukturalna wszystkich organizmów
+                    </label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div style="width: 100%;">
+            <p class="question">2. Ułóż zdania w odpowiedne miejsca (6 pkt)</p>
+            <div style="font-size: 24px; user-select: none;">
+                <span class="fontBold" style="padding-left: 42px;">A:</span> Rozpuszczalne w tłuszczach<br>
+                <span class="fontBold" style="padding-left: 42px;">B:</span> Rozpuszczalne w wodzie
+                <br>
+                <br>
+            </div>
+            <div style="display: flex; flex-direction: row; user-select: none; ">
+                <div style="margin-right: 32px;">
+                    <div style="font-size: 24px;">
+                        A, D<sub>3</sub>, E, K
+                    </div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q2">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">A</span>
+                    </div>
+                </div>
+                <div style="margin-left: 64px;">
+                    <div style="font-size: 24px;">
+                        Witamina H
+                    </div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q2">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">Nic</span>
+                    </div>
+                </div>
+                <div style="margin-left: 96px;">
+                    <div style="font-size: 24px;">
+                        Witaminy z grupy B oraz witamina C
+                    </div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q2">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">B</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div style="width: 100%;">
+            <p class="question">3. Czym są składniki mineralne? (5 pkt)</p>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio1" name="q3" value="a1">
+                    <label class="form-check-label" for="radio1">
+                        To pierwiastki, które występująw organizmie w małych ilościach
+                    </label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio2" name="q3" value="a2">
+                    <label class="form-check-label" for="radio2">
+                        Związki organiczne zbudowane z atomów węgla, wodoru i tlenu
+                    </label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio3" name="q3" value="a3">
+                    <label class="form-check-label" for="radio3">
+                        To pierwiastki, które występująw organizmie w dużych ilościach
+                    </label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio4" name="q3" value="a4">
+                    <label class="form-check-label" for="radio4">
+                        Są nośnikami informacji genetycznej
+                    </label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: rgb(0, 160, 0); position: relative; top: 2px;">done</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio5" name="q3" value="a5">
+                    <label class="form-check-label" for="radio5">
+                        To pierwiastki chemiczne niezbędne do prawidłowego funkcjonowania organizmu
+                    </label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div style="width: 100%">
+            <p class="question">4. Czym jest bilans wodny? (7 pkt)</p>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio1" name="q4" value="a1">
+                    <label class="form-check-label" for="radio1">
+                        To różnica pomiędzy ilością wody pobranej a ilością wody utraconej przez organizm w ciągu tygodnia
+                    </label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio2" name="q4" value="a2">
+                    <label class="form-check-label" for="radio2">
+                        To różnica pomiędzy ilością wody pobranej a ilością wody utraconej przez organizm w ciągu godziny
+                    </label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: rgb(0, 160, 0); position: relative; top: 2px;">done</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio3" name="q4" value="a3">
+                    <label class="form-check-label" for="radio3">
+                        To różnica pomiędzy ilością wody pobranej a ilością wody utraconej przez organizm w ciągu doby
+                    </label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio4" name="q4" value="a4">
+                    <label class="form-check-label" for="radio4">
+                        To różnica pomiędzy ilością wody pobranej a ilością wody utraconej przez organizm w ciągu minuty
+                    </label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio5" name="q4" value="a5">
+                    <label class="form-check-label" for="radio5">
+                        To różnica pomiędzy ilością wody pobranej a ilością wody utraconej przez organizm w ciągu sekundy
+                    </label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio6" name="q4" value="a6">
+                    <label class="form-check-label" for="radio6">
+                        To różnica pomiędzy ilością wody pobranej a ilością wody utraconej przez organizm w ciągu milisekundy
+                    </label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div style="width: 100%">
+            <p class="question">5. Jakie są funkcję wody? (8 pkt / 4 odp)</p>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: rgb(0, 160, 0); position: relative; top: 2px;">done</i>
+                </div>
+                <div class="form-check" style="font-size: 24px;">
+                    <input type="checkbox" class="form-check-input" style="cursor: pointer;" id="check1" name="q5" value="a1">
+                    <label class="form-check-label" for="check1">Jest bardzo dobrym rozpuszczalnikiem</label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: rgb(0, 160, 0); position: relative; top: 2px;">done</i>
+                </div>
+                <div class="form-check" style="font-size: 24px;">
+                    <input type="checkbox" class="form-check-input" style="cursor: pointer;" id="check2" name="q5" value="a2">
+                    <label class="form-check-label" for="check2">Ma duże ciepło właściwe</label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check" style="font-size: 24px;">
+                    <input type="checkbox" class="form-check-input" style="cursor: pointer;" id="check3" name="q5" value="a3">
+                    <label class="form-check-label" for="check3">Bierze udział w przewodzeniu impulsów nerwowych</label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check" style="font-size: 24px;">
+                    <input type="checkbox" class="form-check-input" style="cursor: pointer;" id="check4" name="q5" value="a4">
+                    <label class="form-check-label" for="check4">Reguluje ciśnienie krwi</label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: rgb(0, 160, 0); position: relative; top: 2px;">done</i>
+                </div>
+                <div class="form-check" style="font-size: 24px;">
+                    <input type="checkbox" class="form-check-input" style="cursor: pointer;" id="check5" name="q5" value="a5">
+                    <label class="form-check-label" for="check5">Ma wysokie ciepło parowania</label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check" style="font-size: 24px;">
+                    <input type="checkbox" class="form-check-input" style="cursor: pointer;" id="check6" name="q5" value="a6">
+                    <label class="form-check-label" for="check6">Ma małe napięcie powierzchniowe</label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: rgb(0, 160, 0); position: relative; top: 2px;">done</i>
+                </div>
+                <div class="form-check" style="font-size: 24px;">
+                    <input type="checkbox" class="form-check-input" style="cursor: pointer;" id="check7" name="q5" value="a7">
+                    <label class="form-check-label" for="check7">Ma duże napięcie powierzchniowe</label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check" style="font-size: 24px;">
+                    <input type="checkbox" class="form-check-input" style="cursor: pointer;" id="check8" name="q5" value="a8">
+                    <label class="form-check-label" for="check8">Ma dobry bilans wodny</label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check" style="font-size: 24px;">
+                    <input type="checkbox" class="form-check-input" style="cursor: pointer;" id="check9" name="q5" value="a9">
+                    <label class="form-check-label" for="check9">Budulcowa</label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check" style="font-size: 24px;">
+                    <input type="checkbox" class="form-check-input" style="cursor: pointer;" id="check10" name="q5" value="a10">
+                    <label class="form-check-label" for="check10">Jest niezbędny do prawidłowego działania komórek nerwowych</label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div style="width: 100%">
+            <p class="question">6. Ułóż do odpowiedniej funkcji<br>nazwę witaminy rozpuszczalnej w tłuszczach (16 pkt)</p>
+            <div style="font-size: 24px; user-select: none;">
+                <span class="fontBold" style="padding-left: 42px;">A:</span> Witamina A<br>
+                <span class="fontBold" style="padding-left: 42px;">B:</span> Witamina D<sub>3</sub><br>
+                <span class="fontBold" style="padding-left: 42px;">C:</span> Witamina E<br>
+                <span class="fontBold" style="padding-left: 42px;">D:</span> Witamina K
+                <br>
+                <br>
+            </div>
+            <div style="display: flex; flex-direction: row; user-select: none; ">
+                <div style="margin-right: 32px;">
+                    <div style="font-size: 24px; width: 300px;">
+                        Zmniejsza ryzyko zachowania na nowotwory
+                    </div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q6">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">C</span>
+                    </div>
+                </div>
+                <br>
+                <div style="margin-bottom: 32px;">
+                    <div style="font-size: 24px; width: 300px;">
+                        Reguluje proces powstawania krwinek
+                    </div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q6">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">Nic</span>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div style="display: flex; flex-direction: row; margin-bottom: 32px; user-select: none; ">
+                <div style="margin-right: 32px;">
+                    <div style="font-size: 24px; width: 300px;">
+                        Bierze udział w oddychaniu tlenowym i syntezie hemoglobiny
+                    </div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q6">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">Nic</span>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <div style="font-size: 24px; width: 300px;">Zwiększa wchłanianie wapnia i fosforu z przewodu pokarmowego</div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q6">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">B</span>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div style="display: flex; flex-direction: row; user-select: none; ">
+                <div style="margin-right: 32px;">
+                    <div style="font-size: 24px; width: 300px;">Jest niezbędna do prawidłowego widzenia</div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q6">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">A</span>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <div style="font-size: 24px; width: 300px;">Bierze udział w procesie krzepnięcia krwi</div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q6">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">D</span>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div style="display: flex; flex-direction: row; user-select: none;">
+                <div style="margin-right: 32px; margin-top: 32px;">
+                    <div style="font-size: 24px; width: 300px;">
+                        Poprawia płodność
+                    </div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q6">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">C</span>
+                    </div>
+                </div>
+                <br>
+                <div style="margin-top: 32px;">
+                    <div style="font-size: 24px; width: 300px;">Powoduje odkładanie się tych pierwiastków w kościach i zębach</div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q6">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">B</span>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+        <br>
+        <div style="width: 100%">
+            <p class="question">7. Ułóż do odpowiedniej funkcji<br>nazwę witaminy rozpuszczalnej w wodzie? (16 pkt)</p>
+            <div style="font-size: 24px; user-select: none;">
+                <span class="fontBold" style="padding-left: 42px;">A:</span> Witamina B<sub>2</sub><br>
+                <span class="fontBold" style="padding-left: 42px;">B:</span> Witamina H<br>
+                <span class="fontBold" style="padding-left: 42px;">C:</span> Witamina B<sub>3</sub><br>
+                <span class="fontBold" style="padding-left: 42px;">D:</span> Witamina B<sub>12</sub><br>
+                <span class="fontBold" style="padding-left: 42px;">E:</span> Witamina B<sub>6</sub><br>
+                <br>
+                <br>
+            </div>
+            <div style="display: flex; flex-direction: row; user-select: none; ">
+                <div style="margin-right: 32px;">
+                    <div style="font-size: 24px; width: 300px;">
+                        Warunkuje prawidłową pracę układu pokarmowego
+                    </div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q7">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                            <option>E</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">C</span>
+                    </div>
+                </div>
+                <br>
+                <div style="margin-bottom: 32px;">
+                    <div style="font-size: 24px; width: 300px;">
+                        Warunkuje prawidłową pracę układu nerwowego
+                    </div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q7">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                            <option>E</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">C</span>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div style="display: flex; flex-direction: row; margin-bottom: 32px; user-select: none; ">
+                <div style="margin-right: 32px;">
+                    <div style="font-size: 24px; width: 300px;">
+                        Reguluje proces powstawania krwinek
+                    </div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q7">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                            <option>E</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">D</span>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <div style="font-size: 24px; width: 300px;">Jest potrzebna do syntezy kwasów tłuszczowych</div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q7">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">B</span>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div style="display: flex; flex-direction: row; user-select: none; ">
+                <div style="margin-right: 32px;">
+                    <div style="font-size: 24px; width: 300px;">Uczestniczy w biosyntezie kwasów nukleinowych</div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q7">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                            <option>E</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">Nic</span>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <div style="font-size: 24px; width: 300px;">Bierze udział w oddychaniu tlenowym i syntezie hemoglobiny</div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q7">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                            <option>E</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">A</span>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div style="display: flex; flex-direction: row; user-select: none;">
+                <div style="margin-right: 32px; margin-top: 32px;">
+                    <div style="font-size: 24px; width: 300px;">
+                        Poprawia stan skóry i przyspiesza gojenie się ran.
+                    </div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q7">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                            <option>E</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">A</span>
+                    </div>
+                </div>
+                <br>
+                <div style="margin-top: 32px;">
+                    <div style="font-size: 24px; width: 300px;">
+                        Bierze udział w procesie krzepnięcia krwi
+                    </div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q7">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                            <option>E</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">Nic</span>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+        <br>
+        <div style="width: 100%">
+            <p class="question">8. Jaka witamina wzmacnia zęby? (7 pkt)</p>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: rgb(0, 160, 0); position: relative; top: 2px;">done</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio1" name="q8" value="a1">
+                    <label class="form-check-label" for="radio1">Witamina C</label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio2" name="q8" value="a2">
+                    <label class="form-check-label" for="radio2">
+                        Witamina A
+                    </label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio3" name="q8" value="a3">
+                    <label class="form-check-label" for="radio3"> 
+                        Witamina B
+                    </label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio4" name="q8" value="a4">
+                    <label class="form-check-label" for="radio4">
+                        Witamina D<sub>3</sub>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div style="width: 100%">
+            <p class="question">9. Czy prawda, że w naszy organizmie w największej ilości - stanowi średnio ok. 65% jego masy? (10 pkt)</p>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: rgb(0, 160, 0); position: relative; top: 2px;">done</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio1" name="q9" value="a1">
+                    <label class="form-check-label" for="radio1">Prawda</label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio2" name="q9" value="a2">
+                    <label class="form-check-label" for="radio2">
+                        Fałsz
+                    </label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div style="width: 100%">
+            <p class="question">10. Czy prawda, że tracimy ok 2l (litra) wody przez skórę? (10 pkt)</p>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio1" name="q10" value="a1">
+                    <label class="form-check-label" for="radio1">Prawda</label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: rgb(0, 160, 0); position: relative; top: 2px;">done</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio2" name="q10" value="a2">
+                    <label class="form-check-label" for="radio2">
+                        Fałsz
+                    </label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div style="width: 100%">
+            <p class="question">11. Czemu będzie równe X a Y? (12 pkt)</p>
+            <table style="position: relative; left: 0px; margin: 0px;">
+                <thead>
+                    <tr><th>Pobieranie wody [ml]</th>
+                    <th>Wydanie wody [ml]</th>
+                </tr></thead>
+                <tbody>
+                    <tr style="background-color: white;">
+                        <td>z napojami - 1500</td>
+                        <td>przez skórę - 400</td>
+                    </tr>
+                    <tr style="background-color: rgb(220, 255, 220);">
+                        <td>z pokarmem - X</td>
+                        <td>przez płuca - Y</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2" style="background-color: white;">woda metaboliczna - 250</td>
+                        <td style="background-color: white;">z moczem - 1500</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: rgb(220, 255, 220);">z kałem - 150</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr style="background-color: rgb(140, 255, 140);">
+                        <td>Razem - 2550</td>
+                        <td>Razem - 2550</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <br>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio1" name="q11" value="a1">
+                    <label class="form-check-label" for="radio1">X = 200 a Y = 1500</label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio2" name="q11" value="a2">
+                    <label class="form-check-label" for="radio2">
+                        X = 500 a Y = 800
+                    </label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: rgb(0, 160, 0); position: relative; top: 2px;">done</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio3" name="q11" value="a3">
+                    <label class="form-check-label" for="radio3"> 
+                        X = 800 a Y = 500
+                    </label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio4" name="q11" value="a4">
+                    <label class="form-check-label" for="radio4">
+                        X = 1500 a Y = 200
+                    </label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div style="width: 100%">
+            <p class="question">12. Jakie mogą być przyczyny niedoboru witamin? (9 pkt / 3 odp)</p>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: rgb(0, 160, 0); position: relative; top: 2px;">done</i>
+                </div>
+                <div class="form-check" style="font-size: 24px;">
+                    <input type="checkbox" class="form-check-input" style="cursor: pointer;" id="check1" name="q12" value="a1">
+                    <label class="form-check-label" for="check1">Niewłaściwa dieta</label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: rgb(0, 160, 0); position: relative; top: 2px;">done</i>
+                </div>
+                <div class="form-check" style="font-size: 24px;">
+                    <input type="checkbox" class="form-check-input" style="cursor: pointer;" id="check2" name="q12" value="a2">
+                    <label class="form-check-label" for="check2">Zwiększone zapotrzebowanie na witaminy</label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check" style="font-size: 24px;">
+                    <input type="checkbox" class="form-check-input" style="cursor: pointer;" id="check3" name="q12" value="a3">
+                    <label class="form-check-label" for="check3">Niedobór sodu i chloru</label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check" style="font-size: 24px;">
+                    <input type="checkbox" class="form-check-input" style="cursor: pointer;" id="check4" name="q12" value="a4">
+                    <label class="form-check-label" for="check4">Atak psychologiczny</label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: rgb(0, 160, 0); position: relative; top: 2px;">done</i>
+                </div>
+                <div class="form-check" style="font-size: 24px;">
+                    <input type="checkbox" class="form-check-input" style="cursor: pointer;" id="check5" name="q12" value="a5">
+                    <label class="form-check-label" for="check5">Trudności w przyswajaniu witamin</label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check" style="font-size: 24px;">
+                    <input type="checkbox" class="form-check-input" style="cursor: pointer;" id="check6" name="q12" value="a6">
+                    <label class="form-check-label" for="check6">Hipowitaminoza</label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div style="width: 100%">
+            <p class="question">13. Czy prawda, że jednym z najlepszych zródeł witaminy C<br>jest czarna porzeczka? (12 pkt)</p>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: rgb(0, 160, 0); position: relative; top: 2px;">done</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio1" name="q13" value="a1">
+                    <label class="form-check-label" for="radio1">Prawda</label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio2" name="q13" value="a2">
+                    <label class="form-check-label" for="radio2">
+                        Fałsz
+                    </label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div style="width: 100%">
+            <p class="question">14. Czy prawda, że przykładami naturalnych antytleniaczy<br>są witaminy A, C, E, D<sub>3</sub>? (12 pkt)</p>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio1" name="q14" value="a1">
+                    <label class="form-check-label" for="radio1">Prawda</label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: rgb(0, 160, 0); position: relative; top: 2px;">done</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio2" name="q14" value="a2">
+                    <label class="form-check-label" for="radio2">
+                        Fałsz
+                    </label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div style="width: 100%">
+            <p class="question">15. Ułóż do odpowiednich skutków niedoboru<br>nazwę składnika mineralnego (16 pkt)</p>
+            <div style="font-size: 24px; user-select: none;">
+                <span class="fontBold" style="padding-left: 42px;">A:</span> Wapń<br>
+                <span class="fontBold" style="padding-left: 42px;">B:</span> Magnez<br>
+                <span class="fontBold" style="padding-left: 42px;">C:</span> Potas<br>
+                <span class="fontBold" style="padding-left: 42px;">D:</span> Sód i chlor<br>
+                <span class="fontBold" style="padding-left: 42px;">E:</span> Żelazo<br>
+                <span class="fontBold" style="padding-left: 42px;">F:</span> Jod<br>
+                <span class="fontBold" style="padding-left: 42px;">G:</span> Fluor
+                <br>
+                <br>
+            </div>
+            <div style="display: flex; flex-direction: row; user-select: none; ">
+                <div style="margin-right: 32px;">
+                    <div style="font-size: 24px; width: 300px;">
+                        Próchnica zębów, krzywica, osteoporoza
+                    </div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q15">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                            <option>E</option>
+                            <option>F</option>
+                            <option>G</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">A</span>
+                    </div>
+                </div>
+                <br>
+                <div style="margin-bottom: 32px;">
+                    <div style="font-size: 24px; width: 300px;">
+                        Zaburzenia funkcjonowania tarczycy
+                    </div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q15">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                            <option>E</option>
+                            <option>F</option>
+                            <option>G</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">F</span>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div style="display: flex; flex-direction: row; margin-bottom: 32px; user-select: none; ">
+                <div style="margin-right: 32px;">
+                    <div style="font-size: 24px; width: 300px;">
+                        Anemia, osłabienie, zawroty głowy
+                    </div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q15">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                            <option>E</option>
+                            <option>F</option>
+                            <option>G</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">E</span>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <div style="font-size: 24px; width: 300px;">Niedobór praktycznie nie występuje</div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q15">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                            <option>E</option>
+                            <option>F</option>
+                            <option>G</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">D</span>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div style="display: flex; flex-direction: row; user-select: none; ">
+                <div style="margin-right: 32px;">
+                    <div style="font-size: 24px; width: 300px;">Zwiększona podatność zębów na próchnicę</div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q15">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                            <option>E</option>
+                            <option>F</option>
+                            <option>G</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">G</span>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <div style="font-size: 24px; width: 300px;">Zaburzenia pracy serca, mięśni i układu nerwowego</div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q15">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                            <option>E</option>
+                            <option>F</option>
+                            <option>G</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">B</span>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div style="display: flex; flex-direction: row; user-select: none;">
+                <div style="margin-right: 32px; margin-top: 32px;">
+                    <div style="font-size: 24px; width: 300px;">
+                        Zaparcia, utrata apetytu, zmęczenie
+                    </div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q15">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                            <option>E</option>
+                            <option>F</option>
+                            <option>G</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">C</span>
+                    </div>
+                </div>
+                <br>
+                <div style="margin-top: 32px;">
+                    <div style="font-size: 24px; width: 300px;">Krwawienia, niedokrwistość</div>
+                    <div style="display: flex; align-items: flex-end;">
+                        <select id="select" style="width: 100px; margin-top: 16px;" class="form-select" name="q15">
+                            <option>Nic</option>
+                            <option>A</option>
+                            <option>B</option>
+                            <option>C</option>
+                            <option>D</option>
+                            <option>E</option>
+                            <option>F</option>
+                            <option>G</option>
+                        </select>
+                        <span name="resultAnswer" style="display: none; font-size: 28px; position: relative; top: 3px; margin-left: 32px; color:rgb(0, 120, 0);">Nic</span>
+                    </div>
+                </div>
+                <br>
+            </div>
+        </div>
+        <br>
+        <div style="width: 100%">
+            <p class="question">16. Czy prawda, że razem dobowy bilans<br>pobierania i wydalania wody razem jest 2550ml? (18 pkt)</p>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: rgb(0, 160, 0); position: relative; top: 2px;">done</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio1" name="q16" value="a1">
+                    <label class="form-check-label" for="radio1">Prawda</label>
+                </div>
+            </div>
+            <div style="font-size: 24px; display: flex;">
+                <div name="resultAnswer" style="display: none">
+                    <i class="material-icons" style="margin-right: 0px; color: red; position: relative; top: 2px;">clear</i>
+                </div>
+                <div class="form-check">
+                    <input type="radio" class="form-check-input" style="cursor: pointer;" id="radio2" name="q16" value="a2">
+                    <label class="form-check-label" for="radio2">
+                        Fałsz
+                    </label>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div style="width: 100%">
+            <p class="question">17. Jak inaczej nazywa się Witamina H? (24 pkt)</p>
+            <form style="display: flex; align-items: center;">
+                <input type="text" style="width: 300px; font-size: 24px; padding: 8px 12px;" class="form-control" placeholder="Enter word..." name="q17">
+                <span name="resultAnswer" style="display: none; font-size: 28px; margin-left: 32px; color:rgb(0, 120, 0);">Biotyna</span>
+            </form>
+        </div>
+        <br>
+        <div style="width: 100%">
+            <p class="question">18. Jakim symbolem jest oznaczanowitamina C na produktach? (29pkt)</p>
+            <form style="display: flex; align-items: center;">
+                <input type="text" style="width: 300px; font-size: 24px; padding: 8px 12px;" class="form-control" placeholder="Enter word..." name="q18">
+                <span name="resultAnswer" style="display: none; font-size: 28px; margin-left: 32px; color:rgb(0, 120, 0);">E300</span>
+            </form>
+        </div>
+        <br>
+        <br>
+        <br>
+        <a href="#" id="btnTest" class="btnTest" onclick="btnClick()">Zweryfikować</a>
+        <a href="topic.html" id="btnExit" style="display: none; background-color: red" class="btnTest">Wyjść</a>
     </main>
     <script>
         function btnClick() {
             var result = 0;
             var corAnswers = [
-                ["a3"],
-                ["a1", "a4", "a5", "a8", "a9", "a10"],
-                ["białka", "bialka"],
-                ["tłuszcze", "tluszcze"],
-                ["a2", "a4"],
-                ["a3"],
-                ["błonnik", "blonnik"],
-                ["B", "A"],
                 ["a2"],
-                ["B", "Nic", "A", "B", "A"],
+                ["A", "Nic", "B"],
+                ["a5"],
                 ["a3"],
-                ["f"]
+                ["a1", "a2", "a5", "a7"],
+                ["C", "Nic", "Nic", "B", "A", "D", "C", "B"],
+                ["C", "C", "D", "B", "Nic", "A", "A", "Nic"],
+                ["a1"],
+                ["a1"],
+                ["a2"],
+                ["a3"],
+                ["a1", "a2", "a5"],
+                ["a1"],
+                ["a2"],
+                ["A", "F", "E", "D", "G", "B", "C", "Nic"],
+                ["a1"],
+                ["biotyna"],
+                ["e300"]
             ];
             
-            var points = [3, 12, 6, 6, 4, 8, 9, 6, 10, 10, 12, 14];
+            var points = [3, 6, 5, 7, 8, 16, 16, 7, 10, 10, 12, 9, 12, 12, 16, 18, 24, 29];
             var maxPoint = 0;
 
             for (let i = 0; i < points.length; i++)
                 maxPoint += points[i];
 
-            for (let i = 0; i < 12; i++) {
+            for (let i = 0; i < 18; i++) {
                 var answers = document.getElementsByName('q' + String(i + 1));
 
                 for (let j = 0; j < answers.length; j++) {
