@@ -19,3 +19,13 @@ div.select-option#selectOption:hover {
     color:blueviolet;
     cursor: pointer;
 }
+
+.errPage {
+    color: red;
+    font-size: 32px;
+}
+
+.errPage::selection {
+    background-color: darkslateblue;
+    color: white;
+}

@@ -44,7 +44,7 @@ header li {
     list-style: none;
     position: relative;
     top: -4px;
-    transition: 0.4s;
+    transition: 0.8s;
 }
 
 header li:last-child {

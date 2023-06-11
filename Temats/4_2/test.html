@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../biology.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../../header.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../topics.css">
+    <title>Biology Time</title>
+</head>
+<body>
+    <header>
+        <div class="favicon">
+            <img src="../../biology.png" alt="Biology Time">
+            <span>Biology Time</span>
+        </div>
+        <!--<i class="material-icons menu" onclick="clickMenu(this)">menu</i>-->
+        <nav>
+            <li>
+                <a href="../../index.html" class="pageLink">
+                    <i class="material-icons" style="top: 6px !important;">home</i>Strona Główna
+                </a>
+            </li>
+            <li>
+                <a href="../topics.html" class="pageLink">
+                    <i class="material-icons">desktop_windows</i>Tematy
+                </a>
+            </li>
+            <li>
+                <a href="../../Pomoc/pomoc.html" class="pageLink">
+                    <i class="material-icons">help</i>Pomoc
+                </a>
+            </li>
+        </nav>
+    </header>
+    <main>
+        
+    </main>
+    <script>
+        function btnClick() {
+            var result = 0;
+            var corAnswers = [
+                ["a3"],
+                ["a1", "a4", "a5", "a8", "a9", "a10"],
+                ["białka", "bialka"],
+                ["tłuszcze", "tluszcze"],
+                ["a2", "a4"],
+                ["a3"],
+                ["błonnik", "blonnik"],
+                ["B", "A"],
+                ["a2"],
+                ["B", "Nic", "A", "B", "A"],
+                ["a3"],
+                ["f"]
+            ];
+            
+            var points = [3, 12, 6, 6, 4, 8, 9, 6, 10, 10, 12, 14];
+            var maxPoint = 0;
+
+            for (let i = 0; i < points.length; i++)
+                maxPoint += points[i];
+
+            for (let i = 0; i < 12; i++) {
+                var answers = document.getElementsByName('q' + String(i + 1));
+
+                for (let j = 0; j < answers.length; j++) {
+                    if (answers[j].id == "select") {
+                        var corPoint = points[i] / corAnswers[i].length;
+                        if (String(answers[j].value) == corAnswers[i][j])
+                            result += corPoint;
+                    }
+                    else if (answers[j].type == "text") {
+                        var answer = String(answers[j].value).toLowerCase();
+
+                        var isCorrect = false;
+                        for (let k = 0; k < corAnswers.length; k++) {
+                            if (answer == String(corAnswers[i][k])) {
+                                isCorrect = true;
+                                break;
+                            }
+                        }
+
+                        if (isCorrect) {
+                            answers[j].style.backgroundColor = "rgb(180, 255, 230)";
+                            result += points[i];
+                        }
+                        else
+                            answers[j].style.backgroundColor = "rgb(255, 160, 160)";
+                    }
+                    else if (answers[j].type == "radio" && answers[j].checked) {
+                        if (corAnswers[i][0] == String(answers[j].value))
+                            result += points[i];
+                    }
+                    else if (answers[j].type == "checkbox" && answers[j].checked) {
+                        var corPoint = points[i] / corAnswers[i].length;
+                        
+                        var isCorrect = false;
+                        for (let k = 0; k < corAnswers[i].length; k++) {
+                            if (corAnswers[i][k] == String(answers[j].value)) {
+                                isCorrect = true;
+                                break;
+                            }
+                        }
+
+                        if (isCorrect)
+                            result += corPoint;
+                        else
+                            result -= 1;
+                    }
+                }
+            }
+
+            var resultAnswers = document.getElementsByName("resultAnswer");
+
+            for (let i = 0; i < resultAnswers.length; i++)
+                resultAnswers[i].style.display = "block";
+
+            var rounded = function(number){
+                return +number.toFixed(2);
+            }
+
+            if (result < 0)
+                result = 0;
+
+            var procent = rounded(result * 100 / maxPoint);
+            document.getElementById("resultAll").style.display = "flex";
+            document.getElementById("procentResult").innerHTML = String(procent) + "%";
+            document.getElementById("progressBarResult").style.width = String(procent) + "%";
+            document.getElementById("punktsResult").innerHTML = String(result) + "/" + String(maxPoint) + " pkt";
+            document.getElementById("btnTest").style.display = "none";
+            document.getElementById("btnExit").style.display = "block";
+        }
+    </script>
+</body>
+</html>

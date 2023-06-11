@@ -1,10 +1,11 @@
 a.topic {
     display: flex;
     width: var(--widthTopic);
-    background-color: rgb(205, 222, 255);
+    /*background-color: rgb(205, 222, 255);*/
     padding: 20px;
     text-decoration: none;
     color: black !important;
+    transition: 0.65s;
 }
 
 div.theme {
@@ -22,7 +23,7 @@ a.topic:hover {
 }
 
 h1 {
-    font-size: 36px;
+    font-size: 32px;
     color: rgb(23, 10, 105);
     font-weight: bold;
     width: 100%;
@@ -36,7 +37,7 @@ h1.theme {
     text-align: start !important;
     padding: 0px !important;
     padding-bottom: 8px !important;
-    font-size: 28px !important;
+    font-size: 32px !important;
 }
 
 div.imgTopic {
@@ -81,6 +82,11 @@ a.btnTest {
     text-decoration: none;
     font-size: 24px;
     padding: 16px 96px;
+    background-color: rgb(20, 83, 170);
+    color: white;
+}
+
+a.btnTest:hover {
     background-color: rgb(20, 83, 170);
     color: white;
 }
@@ -190,6 +196,7 @@ tr:nth-child(even) {
 p.question {
     font-size: 28px;
     font-weight: bold;
+    color: rgb(23, 10, 105);
 }
 
 p.question::selection {
@@ -200,4 +207,14 @@ p.question::selection {
 label.form-check-label::selection {
     background-color: darkslateblue;
     color:white; 
+}
+
+.errPage {
+    color: red;
+    font-size: 32px;
+}
+
+.errPage::selection {
+    background-color: darkslateblue;
+    color: white;
 }
